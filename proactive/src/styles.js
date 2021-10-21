@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
   box: {
     marginTop: "5px",
+    marginBottom: "10px",
   },
   buttonGroup: {
     width: "400px",
@@ -18,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     //backgroundColor: "red",
     backgroundColor: theme.palette.background.paper,
     padding: "10px 0",
-    position: "absolute",
+    //position: "relative",
     bottom: "0",
     width: "100%",
   },
