@@ -9,20 +9,24 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2), // margin-right: 20px
   },
   box: {
-    marginTop: "5px",
-    marginBottom: "10px",
+    marginTop: "10px",
+    marginBottom: "5px",
   },
   buttonGroup: {
     width: "400px",
   },
   footer: {
-    //backgroundColor: "red",
-    backgroundColor: theme.palette.background.paper,
-    padding: "10px 0",
-    //position: "relative",
-    bottom: "0",
-    width: "100%",
+    marginTop: "auto",
+    padding: "3px 2px",
   },
+  copyRightIcon: {
+    fontSize: 13,
+    paddingTop: "4px"
+  },
+  headerLink: {
+    textDecoration: "none",
+    color: theme.palette.background.paper,
+  }
 }));
 
 

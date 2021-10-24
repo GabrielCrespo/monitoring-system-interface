@@ -1,31 +1,12 @@
 import { Container, CssBaseline, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
-//import CopyrightIcon from "@material-ui/icons/Copyright";
-//import useStyles from "../styles";
+import useStyles from "../styles";
+import CopyrightIcon from "@material-ui/icons/Copyright";
 
-// const Footer = () => {
-//   const classes = useStyles();
-//   return (
-//     <Box
-//       display="flex"
-//       justifyContent="center"
-//       alignItems="center"
-//       className={classes.box}
-//     >
-//       <footer className={classes.footer}>
-//         <Typography variant="h6" align="center" gutterBottom>
-//           Footer
-//         </Typography>
-//         <Typography variant="subtitle1" align="center" color="textSecondary">
-//           Algo que dê propósito ao Footer
-//         </Typography>
-//       </footer>
-//     </Box>
-//   );
-// };
+function Footer() {
+  const classes = useStyles();
 
-export default function StickyFooter() {
   return (
     <Box
       sx={{
@@ -35,25 +16,45 @@ export default function StickyFooter() {
       }}
     >
       <CssBaseline />
-      <Box
-        component="footer"
-        sx={{
-          py: 3,
-          px: 2,
-          mt: "auto",
-          backgroundColor: (theme) => theme.palette.mode.anchor,
-        }}
-      >
+      <Box className={classes.footer} component="footer">
         <Container maxWidth="sm">
-          <Typography variant="h6" align="center">
-            Departamento de Ciência da Computação.
+          <Typography
+            variant="h6"
+            align="center"
+            sx={{
+              typography: {
+                fontSize: 18,
+              },
+            }}
+          >
+            Departamento de Ciência da Computação
           </Typography>
-          <Typography variant="subtitle1" align="center">
-            Universidade de Brasília.
+          <Typography
+            variant="subtitle1"
+            align="center"
+            sx={{
+              typography: {
+                fontSize: 15,
+              },
+            }}
+          >
+            Universidade de Brasília
+          </Typography>
+          <Typography
+            align="center"
+            sx={{
+              typography: {
+                fontSize: 13,
+              },
+            }}
+          >
+            Copyright <CopyrightIcon className={classes.copyRightIcon} />{" "}
+            {new Date().getFullYear().toString()}. All rights reserved
           </Typography>
         </Container>
       </Box>
     </Box>
   );
 }
-//export default Footer;
+
+export default Footer;
