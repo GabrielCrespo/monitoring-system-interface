@@ -1,22 +1,24 @@
 import Home from "./pages/Home";
-import LoginStudent from "./pages/LoginStudent";
-import LoginTeacher from "./pages/LoginTeacher"
-import LoginMonitor from "./pages/LoginMonitor"
-import LoginTutor from "./pages/LoginTutor"
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import LoginStudent from "./pages/Student/LoginStudent";
+import LoginTeacher from "./pages/Teacher/LoginTeacher";
+import LoginMonitor from "./pages/Monitor/LoginMonitor";
+import LoginTutor from "./pages/Tutor/LoginTutor";
+import signUpStudent from "./pages/Student/SignUpStudent";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-    <Router>
+      <Router>
         <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/signup-student' exact component={LoginStudent} />
-          <Route path='/signup-teacher' exact component={LoginTeacher} />
-          <Route path='/signup-monitor' exact component={LoginMonitor} />
-          <Route path='/signup-tutor' exact component={LoginTutor} />
+          <Route path="/" exact component={Home} />
+          <Route path="/login-student" exact component={LoginStudent} />
+          <Route path="/login-teacher" exact component={LoginTeacher} />
+          <Route path="/login-monitor" exact component={LoginMonitor} />
+          <Route path="/login-tutor" exact component={LoginTutor} />
+          <Route path="/signup-student" exact component={signUpStudent} />
         </Switch>
-     </Router>
+      </Router>
     </>
   );
 }

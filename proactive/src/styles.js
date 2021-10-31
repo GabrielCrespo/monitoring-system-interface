@@ -33,6 +33,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
   },
+  Birthday: {
+    padding: 1,
+  },
 }));
 
 export default useStyles;

@@ -88,7 +88,7 @@ function Login(props) {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
+                  <Link href={props.href} variant="body2">
                     {"Ainda não tem cadastro? Cadastre-se"}
                   </Link>
                 </Grid>
