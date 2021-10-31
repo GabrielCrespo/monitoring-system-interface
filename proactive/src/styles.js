@@ -21,13 +21,18 @@ const useStyles = makeStyles((theme) => ({
   },
   copyRightIcon: {
     fontSize: 13,
-    paddingTop: "4px"
+    paddingTop: "4px",
   },
   headerLink: {
     textDecoration: "none",
     color: theme.palette.background.paper,
-  }
+  },
+  LoginFirstBox: {
+    marginTop: 5,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
 }));
-
 
 export default useStyles;
