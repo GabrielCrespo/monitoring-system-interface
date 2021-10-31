@@ -134,7 +134,7 @@ function SignUp(props) {
             </Button>
             <Grid container justifyContent="center">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/login-student" variant="body2">
                   Já tem cadastro? Entre
                 </Link>
               </Grid>

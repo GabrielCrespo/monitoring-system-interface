@@ -4,6 +4,10 @@ import TextField from "@mui/material/TextField";
 
 const courses = [
   {
+    value: "",
+    label: "",
+  },
+  {
     value: "CIC",
     label: "Ciência da Computação",
   },
@@ -44,6 +48,8 @@ export default function SelectTextFields() {
           SelectProps={{
             native: true,
           }}
+          required
+          autoComplete="family-name"
         >
           {courses.map((option) => (
             <option key={option.value} value={option.value}>
