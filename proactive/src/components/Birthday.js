@@ -21,7 +21,15 @@ export default function BasicDatePicker() {
           inputFormat="dd/MM/yyyy"
           value={value}
           onChange={handleChange}
-          renderInput={(params) => <TextField {...params} required />}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              required
+              fullWidth
+              id="birthday"
+              name="birthday"
+            />
+          )}
         />
       </Stack>
     </LocalizationProvider>

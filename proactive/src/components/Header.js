@@ -10,12 +10,12 @@ const Header = () => {
     <>
       <CssBaseline />
       <AppBar position="relative">
-        <Link to="/" className={classes.headerLink}>
-          <Toolbar>
+        <Toolbar>
+          <Link to="/" className={classes.headerLink}>
             <SchoolIcon className={classes.icon} />
             <Typography variant="h6">Monitoria Proativa</Typography>
-          </Toolbar>
-        </Link>
+          </Link>
+        </Toolbar>
       </AppBar>
     </>
   );

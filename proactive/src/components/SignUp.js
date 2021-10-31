@@ -13,6 +13,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Birthday from "./Birthday";
 import RadioButton from "./RadioButton";
 import MultipleSelect from "./MultipleSelect";
+import MaskRegistration from "./Mask";
 
 const theme = createTheme();
 
@@ -22,8 +23,14 @@ function SignUp(props) {
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
     console.log({
+      name: data.get("name"),
+      userName: data.get("userName"),
+      registration: data.get("registration"),
+      course: data.get("course"),
+      birthday: data.get("birthday"),
       email: data.get("email"),
       password: data.get("password"),
+      gender: data.get("gender"),
     });
   };
 
@@ -52,25 +59,15 @@ function SignUp(props) {
             sx={{ mt: 3 }}
           >
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12}>
                 <TextField
                   autoComplete="given-name"
-                  name="firstName"
+                  name="name"
                   required
                   fullWidth
-                  id="firstName"
+                  id="name"
                   label="Nome"
                   autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Sobrenome"
-                  name="lastName"
-                  autoComplete="family-name"
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -84,12 +81,12 @@ function SignUp(props) {
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
+                <MaskRegistration
+                  mask="99/9999999"
+                  disabled={false}
                   id="registration"
+                  name="registration"
                   label="Matrícula"
-                  name="Registration"
                   autoComplete="family-name"
                 />
               </Grid>

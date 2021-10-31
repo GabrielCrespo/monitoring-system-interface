@@ -40,7 +40,8 @@ export default function SelectTextFields() {
     <Box component="form" noValidate autoComplete="off">
       <div>
         <TextField
-          id="outlined-select-course-native"
+          id="course"
+          name="course"
           select
           label="Curso"
           value={course}

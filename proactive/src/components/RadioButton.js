@@ -9,7 +9,7 @@ function RadioButton() {
   return (
     <FormControl component="fieldset">
       <FormLabel component="legend">Gênero</FormLabel>
-      <RadioGroup row aria-label="gender" name="row-radio-buttons-group">
+      <RadioGroup row aria-label="gender" name="gender">
         <FormControlLabel value="female" control={<Radio />} label="Feminino" />
         <FormControlLabel value="male" control={<Radio />} label="Masculino" />
         <FormControlLabel value="other" control={<Radio />} label="Outro" />

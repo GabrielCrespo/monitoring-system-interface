@@ -26,6 +26,8 @@ const useStyles = makeStyles((theme) => ({
   headerLink: {
     textDecoration: "none",
     color: theme.palette.background.paper,
+    display: "flex",
+    flexDirection: "row",
   },
   LoginFirstBox: {
     marginTop: 5,
