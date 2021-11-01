@@ -5,14 +5,23 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 
-function RadioButton() {
+function getLabelFromArray(arr) {
+  return arr.map((object, index) => (
+    <FormControlLabel
+      key={index}
+      value={object.value}
+      control={<Radio />}
+      label={object.label}
+    />
+  ));
+}
+
+function RadioButton(props) {
   return (
     <FormControl component="fieldset">
-      <FormLabel component="legend">Gênero</FormLabel>
-      <RadioGroup row aria-label="gender" name="gender">
-        <FormControlLabel value="female" control={<Radio />} label="Feminino" />
-        <FormControlLabel value="male" control={<Radio />} label="Masculino" />
-        <FormControlLabel value="other" control={<Radio />} label="Outro" />
+      <FormLabel component="legend">{props.type}</FormLabel>
+      <RadioGroup row aria-label={props.label} name={props.name}>
+        {getLabelFromArray(props.array)}
       </RadioGroup>
     </FormControl>
   );

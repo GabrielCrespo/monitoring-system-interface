@@ -14,6 +14,11 @@ import Birthday from "./Birthday";
 import RadioButton from "./RadioButton";
 import MultipleSelect from "./MultipleSelect";
 import MaskRegistration from "./Mask";
+import genders from "../informations/genders";
+import parentsGraduation from "../informations/parentsGraduation";
+import lastSchoolYear from "../informations/lastSchoolYear";
+import courses from "../informations/courses";
+import quotas from "../informations/quotas";
 
 const theme = createTheme();
 
@@ -31,6 +36,8 @@ function SignUp(props) {
       email: data.get("email"),
       password: data.get("password"),
       gender: data.get("gender"),
+      graduation: data.get("graduation"),
+      school: data.get("school"),
     });
   };
 
@@ -87,11 +94,16 @@ function SignUp(props) {
                   id="registration"
                   name="registration"
                   label="Matrícula"
-                  autoComplete="family-name"
+                  autoComplete="off"
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <MultipleSelect />
+                <MultipleSelect
+                  id="course"
+                  name="course"
+                  label="Curso"
+                  array={courses}
+                />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <Birthday />
@@ -117,9 +129,38 @@ function SignUp(props) {
                   autoComplete="new-password"
                 />
               </Grid>
-            </Grid>
-            <Grid item xs={12} paddingTop="16px" paddingLeft="5px">
-              <RadioButton />
+              <Grid item xs={12}>
+                <MultipleSelect
+                  id="quota"
+                  name="quotas"
+                  label="Cota"
+                  array={quotas}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <RadioButton
+                  array={genders}
+                  type="Gênero"
+                  label="gender"
+                  name="gender"
+                />
+              </Grid>
+              <Grid item xs={12} paddingTop="16px" paddingLeft="5px">
+                <RadioButton
+                  array={parentsGraduation}
+                  type="Graduação dos Pais"
+                  label="graduation"
+                  name="graduation"
+                />
+              </Grid>
+              <Grid item xs={12} paddingTop="16px" paddingLeft="5px">
+                <RadioButton
+                  array={lastSchoolYear}
+                  type="Último Ano do Ensino Médio"
+                  label="school"
+                  name="school"
+                />
+              </Grid>
             </Grid>
             <Button
               type="submit"

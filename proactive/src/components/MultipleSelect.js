@@ -1,36 +1,17 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-const courses = [
-  {
-    value: "",
-    label: "",
-  },
-  {
-    value: "CIC",
-    label: "Ciência da Computação",
-  },
-  {
-    value: "LIC",
-    label: "Computação",
-  },
-  {
-    value: "EC",
-    label: "Engenharia de Computação",
-  },
-  {
-    value: "EM",
-    label: "Engenharia Mecatrônica",
-  },
-  {
-    value: "OT",
-    label: "Outro",
-  },
-];
+function mapOptionsToSelect(arr) {
+  return arr.map((option) => (
+    <option key={option.value} value={option.value}>
+      {option.label}
+    </option>
+  ));
+}
 
-export default function SelectTextFields() {
-  const [course, setcourse] = React.useState("");
+export default function SelectTextFields(props) {
+  const [course, setcourse] = useState(null);
 
   const handleChange = (event) => {
     setcourse(event.target.value);
@@ -40,23 +21,18 @@ export default function SelectTextFields() {
     <Box component="form" noValidate autoComplete="off">
       <div>
         <TextField
-          id="course"
-          name="course"
+          id={props.id}
+          name={props.name}
           select
-          label="Curso"
+          label={props.label}
           value={course}
           onChange={handleChange}
           SelectProps={{
             native: true,
           }}
           required
-          autoComplete="family-name"
         >
-          {courses.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
+          {mapOptionsToSelect(props.array)}
         </TextField>
       </div>
     </Box>
